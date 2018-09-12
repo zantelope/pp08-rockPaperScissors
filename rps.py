@@ -1,4 +1,4 @@
-https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html
+
 
 
 import sys
@@ -8,6 +8,7 @@ def choice(num):
   choice = choice.lower()
   if choice != "rock" and choice != "paper" and choice != "scissors":
     print ("Invalid entry")
+    play()
   else:
     return choice
 
@@ -19,7 +20,7 @@ def compare(p1c, p2c):
   if p1c == p2c:
     print ("Tie.\n")
 
-    compare(p1_choice, p2_choice)
+
   else:
     if p1c == "rock":
       if p2c == "scissors":
@@ -37,28 +38,28 @@ def compare(p1c, p2c):
       else:
         return("Player 2 wins.")
   
+    
+    
+    
+def playAgain():
   answer_valid = False
   while answer_valid == False:
-    answer = input("Play again? (y/n")
-    if answer.lower != "y" and answer.lower != "n":
-      print ("Invalid answer")
-    elif answer.lower() == "y":
+    answer = input("\nPlay again? (y/n): ")
+    
+    if answer.lower() == "y":
       answer_valid = True
       play()
     elif answer.lower() == "n":
-      sys.exit
+      sys.exit()
+    else:
+      print("Invalid answer.")
 
 
 def play():
 
   p1_choice = choice(1)
-
   p2_choice = choice(2)
-
   print(compare(p1_choice, p2_choice))
-
-
-
-
+  playAgain()
 
 play()
